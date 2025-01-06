@@ -15,6 +15,15 @@
 ## 94 Configuring Dynamic Routes and Using Route parameters
 
 - Dynamic routes are created by adding `[]` in the file name. For example, `pages/blog/[slug].js` will create a dynamic route for `/blog/post-1 `.
+- To access the slug in the page defined in slug folder. Nextjs automatically passes the params.
+
+```
+const MealDetailsPage = ({ params }) => {
+  console.log(params);
+  return <div>MealDetailsPage={params.mealSlug}</div>;
+};
+export default MealDetailsPage;
+```
 
 ## 101 Optimizing the image with Next Image 
 
