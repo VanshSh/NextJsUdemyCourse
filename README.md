@@ -104,7 +104,24 @@ const state = useActionState(saveMeal, {message:null}) // saveMeal is the functi
 - Using the 
 
 ```
-
 export async function generateMetaData({params}){}
-
+ 
 ```
+
+
+## 141 Setting Up and using the parallel routes
+
+- Parallel Routes is a feature that allows you to render the content of 2 different route
+- We must add layout.js in the folder where we want to add the parallel routes.
+- You need to add one subfolder for each parallel route that you want to add.
+- Add naming convention for that subfolder is : `@archive` and `@latest` and add page.js in both the subfolder
+- Now in such case `layout.js` file does not only have the {children} prop but the one parameter for each parallel route with the name given after the `@` sign.
+- Make sure that whenever you are working with the parallel routes, all the subfolder should support all kind of routed. 
+- To fix this Nextjs has deault.js file which is used to handle the default route.
+- If both the page.js and default.js has same code / functionality then you can get rid of the page.js and use the default.js file only
+
+## 143 Catch all routes
+
+- It is represented by `[[...slug]]` folder. It is used to catch all the routes that are not defined in the routes.
+- So all the routes like `archive/year=2024` or  `archive/year=2024/month=2` will be caught by this file.
+- And in this case you may get rid of page.js file which is in the archive folder because anyways our `[[...slug]]` folder will catch all the routes. So the `page.js` inside this `[[...slug]]` will be shown.
