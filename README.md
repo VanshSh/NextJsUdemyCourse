@@ -116,7 +116,7 @@ export async function generateMetaData({params}){}
 - You need to add one subfolder for each parallel route that you want to add.
 - Add naming convention for that subfolder is : `@archive` and `@latest` and add page.js in both the subfolder
 - Now in such case `layout.js` file does not only have the {children} prop but the one parameter for each parallel route with the name given after the `@` sign.
-- Make sure that whenever you are working with the parallel routes, all the subfolder should support all kind of routed. 
+- Make sure that whenever you are working with the parallel routes, all the subfolder should support all kind of route . 
 - To fix this Nextjs has deault.js file which is used to handle the default route.
 - If both the page.js and default.js has same code / functionality then you can get rid of the page.js and use the default.js file only
 
@@ -125,3 +125,39 @@ export async function generateMetaData({params}){}
 - It is represented by `[[...slug]]` folder. It is used to catch all the routes that are not defined in the routes.
 - So all the routes like `archive/year=2024` or  `archive/year=2024/month=2` will be caught by this file.
 - And in this case you may get rid of page.js file which is in the archive folder because anyways our `[[...slug]]` folder will catch all the routes. So the `page.js` inside this `[[...slug]]` will be shown.
+- To handle error you should create `error.js` using 'use client' because error can occur both side on client and on server.
+
+## 147 Server vs Client Components
+
+- Prefer keeping  component server side unless you need to use client side component.
+- `usePathName` hook returns the current path name.
+- If you want to create the component as client out source them and create as granualar form of client component as possible
+
+## 148 Nested route inside dynamic route
+
+- `/images/news/{newsItem.slug}/image` is the nested route inside the dynamic route.
+
+## 149 Intercepting navigation & using interception routes (Very Important Topic)
+
+
+- [Read more](https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes)
+- Intercepting routes allows you to load a route from another part of your application within the current layout. This routing paradigm can be useful when you want to display the content of a route without the user switching to a different context.
+-  The intercepting route essentially intercepts an internal navigation request and instead of showing the page you would see if you would reload the page or come to the page from outside the website, a different page will be shown.
+-  Convention => (.), (..), (...)
+
+## 154 Using and Understanding the route group (Very Important Topic)
+
+- I want to achieve the different root layout for the starting page than for the rest of the applications. This can be achieved by using the `route group`.
+- Create folder naming `(content)` and move all your folders / route in this and this will allow you to create the specific layout for all the folders inside the content folder.
+- There can not be no othe file on the same level of route group
+
+## 155 Building APIs with route handlers
+
+- You can create the API route by creating the folder `api` and then creating the file inside it naming `route.js`
+- This can have functions like GET , POST, DELETE etc.
+  
+
+## 156 Using middleware in route handlers
+
+- Create the `middleware.js` along side the package.json file and create the function middleware.
+- This function will get called everytime on every request , on every page when a request is made  
