@@ -161,3 +161,7 @@ export async function generateMetaData({params}){}
 
 - Create the `middleware.js` along side the package.json file and create the function middleware.
 - This function will get called everytime on every request , on every page when a request is made  
+
+## 161 Option 2: Server Side Rendering
+
+- In NextJs server side component can return the promises and can returned the fetched data 
