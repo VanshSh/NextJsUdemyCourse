@@ -1,8 +1,7 @@
 # LEARNING OF THE UDEMY COURSE
 
 ### [CodeSandBox Link for all code ](https://codesandbox.io/dashboard/sandboxes/Nextjs%20Maxmilian%20Udemy%20Course?workspace=ws_TQRVDyHzkH3sxpUFbHgQN1)
---- 
-###  [Currently at](https://www.udemy.com/course/nextjs-react-the-complete-guide/learn/lecture/43340620#learning-tools)
+
 ---
 ## 91 Working with Pages and Layout
  - Page.js is for the content of the page
@@ -109,7 +108,7 @@ export async function generateMetaData({params}){}
 ```
 
 
-## 141 Setting Up and using the parallel routes
+## 141 Setting Up and using the parallel routes (VERY IMPORTANT TOPIC)
 
 - Parallel Routes is a feature that allows you to render the content of 2 different route
 - We must add layout.js in the folder where we want to add the parallel routes.
@@ -165,3 +164,13 @@ export async function generateMetaData({params}){}
 ## 161 Option 2: Server Side Rendering
 
 - In NextJs server side component can return the promises and can returned the fetched data 
+
+
+## 167 Analyzing Mutations Options
+
+- Create `api>posts` folder  and file `route.js` and you may create functions like POST,GET etc..
+- But instead of setting up api routes. NextJs provide us better option like server action.
+
+## 169 Creating a Server Action
+
+- To create function as server action, you need to add `use server` directive at the top of the function.
