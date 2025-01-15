@@ -174,3 +174,22 @@ export async function generateMetaData({params}){}
 ## 169 Creating a Server Action
 
 - To create function as server action, you need to add `use server` directive at the top of the function.
+
+
+## 173 Validating user input with `useFormState`
+
+
+## 187 Controlling Data Caching
+
+- If you have a function that is used to fetch the data and you want to cache the data for some time then you can use the `revalidatePath` function to revalidate the cache after the data is updated.
+- OR in the same file globally you can declare `export const revalidate = 60` to revalidate the cache after 60 seconds.
+- OR you can use `export const dynamic - 'force-dynamic'` to force the data to be dynamic and not to be cached.
+- OR you can import noStore from 'next/cache' and just inside the function you can use `noStore()` to not cache the data.
+
+## 189 On Demand Cache Invalidation and reavalidatePath & revalidateTag
+
+- With each fetch request we can pass the second parameter `{next:{tags:['msg]}}` and we can use revalidateTag('msg')
+
+## 190 Setting up request memoization for custom data sources
+
+- We can wrap our db call by use `cache` which we can import from react and request duplication will occur
